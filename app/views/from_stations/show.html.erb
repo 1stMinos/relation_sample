@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Office:</strong>
+  <%= Office.find(@from_station.office_id).name %>
+</p>
+
+<p>
+  <strong>From station way:</strong>
+  <%= FromStationWay.find(@from_station.from_station_way_id).name %>
+</p>
+
+<p>
+  <strong>Minutes:</strong>
+  <%= @from_station.minutes %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @from_station.comment %>
+</p>
+
+<%= link_to 'Edit', edit_from_station_path(@from_station) %> |
+<%= link_to 'Back', from_stations_path %>

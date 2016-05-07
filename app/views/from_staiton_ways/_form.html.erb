@@ -1,0 +1,21 @@
+<%= form_for(@from_staiton_way) do |f| %>
+  <% if @from_staiton_way.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@from_staiton_way.errors.count, "error") %> prohibited this from_staiton_way from being saved:</h2>
+
+      <ul>
+      <% @from_staiton_way.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

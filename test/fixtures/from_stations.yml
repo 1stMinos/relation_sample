@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  office_id: 
+  from_station_way_id: 
+  minutes: 1
+  comment: MyString
+
+two:
+  office_id: 
+  from_station_way_id: 
+  minutes: 1
+  comment: MyString

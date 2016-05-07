@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing From Stations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Office</th>
+      <th>From station way</th>
+      <th>Minutes</th>
+      <th>Comment</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @from_stations.each do |from_station| %>
+      <tr>
+        <td>
+            <% unless from_station.office_id.blank? %>
+            <%= Office.find(from_station.office_id).name %>
+            <% end %>
+        </td>
+        <td>
+            <% unless from_station.from_station_way_id.blank? %>
+            <%= FromStationWay.find(from_station.from_station_way_id).name %>
+            <% end %>
+        </td>
+        <td><%= from_station.minutes %></td>
+        <td><%= from_station.comment %></td>
+        <td><%= link_to 'Show', from_station %></td>
+        <td><%= link_to 'Edit', edit_from_station_path(from_station) %></td>
+        <td><%= link_to 'Destroy', from_station, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New From station', new_from_station_path %>

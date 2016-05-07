@@ -1,0 +1,37 @@
+<%= form_for(@from_station) do |f| %>
+  <% if @from_station.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@from_station.errors.count, "error") %> prohibited this from_station from being saved:</h2>
+
+      <ul>
+      <% @from_station.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :office_id %><br>
+    <%= f.text_field :office_id %>
+  </div>
+  <div class="field">
+    <%= f.label :from_station_way_id %><br>
+    <!--
+    <%= f.text_field :from_station_way_id %>
+    -->
+    <%= f.collection_select :from_station_way_id, FromStationWay.all, :id ,:name %>
+
+  </div>
+  <div class="field">
+    <%= f.label :minutes %><br>
+    <%= f.number_field :minutes %>
+  </div>
+  <div class="field">
+    <%= f.label :comment %><br>
+    <%= f.text_field :comment %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
