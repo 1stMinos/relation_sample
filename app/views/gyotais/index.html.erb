@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Gyotais</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Parent</th>
+      <th>Parent name</th>
+      <th>Comment</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gyotais.each do |gyotai| %>
+      <tr>
+        <td><%= gyotai.name %></td>
+        <td><%= gyotai.parent_id %></td>
+        <td><%= gyotai.parent_name %></td>
+        <td><%= gyotai.comment %></td>
+        <td><%= link_to 'Show', gyotai %></td>
+        <td><%= link_to 'Edit', edit_gyotai_path(gyotai) %></td>
+        <td><%= link_to 'Destroy', gyotai, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Gyotai', new_gyotai_path %>

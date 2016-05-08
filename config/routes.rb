@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :gyotais
   resources :from_station_ways
   resources :from_stations
   resources :offices

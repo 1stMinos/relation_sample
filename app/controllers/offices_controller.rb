@@ -69,6 +69,6 @@ class OfficesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def office_params
-      params.require(:office).permit(:name, :latitude, :longitude, :comment)
+      params.require(:office).permit(:name, :latitude, :longitude, :comment,:gyotai_id)
     end
 end

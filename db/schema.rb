@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160507053059) do
+ActiveRecord::Schema.define(version: 20160507140428) do
 
   create_table "from_staiton_ways", force: :cascade do |t|
     t.string   "name"
@@ -36,6 +36,25 @@ ActiveRecord::Schema.define(version: 20160507053059) do
 
   add_index "from_stations", ["from_station_way_id"], name: "index_from_stations_on_from_station_way_id"
   add_index "from_stations", ["office_id"], name: "index_from_stations_on_office_id"
+
+  create_table "gyotais", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "parent_id"
+    t.string   "parent_name"
+    t.text     "comment"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "office_gyotais", force: :cascade do |t|
+    t.integer  "office_id_id"
+    t.integer  "gyotai_id_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "office_gyotais", ["gyotai_id_id"], name: "index_office_gyotais_on_gyotai_id_id"
+  add_index "office_gyotais", ["office_id_id"], name: "index_office_gyotais_on_office_id_id"
 
   create_table "offices", force: :cascade do |t|
     t.string   "name"

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @gyotai.name %>
+</p>
+
+<p>
+  <strong>Parent:</strong>
+  <%= @gyotai.parent_id %>
+</p>
+
+<p>
+  <strong>Parent name:</strong>
+  <%= @gyotai.parent_name %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @gyotai.comment %>
+</p>
+
+<%= link_to 'Edit', edit_gyotai_path(@gyotai) %> |
+<%= link_to 'Back', gyotais_path %>
