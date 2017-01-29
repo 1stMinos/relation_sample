@@ -1,4 +1,4 @@
 class OfficeGyotai < ActiveRecord::Base
-  belongs_to :office_id
-  belongs_to :gyotai_id
+  belongs_to :office
+  belongs_to :gyotai
 end

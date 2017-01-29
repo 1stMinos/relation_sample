@@ -11,13 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160507140428) do
-
-  create_table "from_staiton_ways", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 20160508060708) do
 
   create_table "from_station_ways", force: :cascade do |t|
     t.string   "name"
@@ -47,14 +41,14 @@ ActiveRecord::Schema.define(version: 20160507140428) do
   end
 
   create_table "office_gyotais", force: :cascade do |t|
-    t.integer  "office_id_id"
-    t.integer  "gyotai_id_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.integer  "office_id"
+    t.integer  "gyotai_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  add_index "office_gyotais", ["gyotai_id_id"], name: "index_office_gyotais_on_gyotai_id_id"
-  add_index "office_gyotais", ["office_id_id"], name: "index_office_gyotais_on_office_id_id"
+  add_index "office_gyotais", ["gyotai_id"], name: "index_office_gyotais_on_gyotai_id"
+  add_index "office_gyotais", ["office_id"], name: "index_office_gyotais_on_office_id"
 
   create_table "offices", force: :cascade do |t|
     t.string   "name"
